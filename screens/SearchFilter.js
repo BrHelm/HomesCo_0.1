@@ -12,6 +12,7 @@ import {
   Slider,
   KeyboardAvoidingView,
 } from "react-native";
+import config from "../../config";
 
 class SearchFilter extends Component {
   constructor(props) {

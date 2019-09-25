@@ -5,6 +5,7 @@ import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import { Text, View, TextInput, TouchableOpacity, Image, ImageBackground, Slider } from 'react-native';
 import { updateEmail, updatePassword, login, getUser, facebookLogin } from '../actions/user';
+import SearchFilter from './temp'
 
 class Filter extends React.Component {
   constructor(props) {
@@ -58,6 +59,25 @@ class Filter extends React.Component {
   };
   render() {
     return (
+      <SearchFilter/>
+    
+    );
+  }
+}
+
+const mapDispatchToProps = (dispatch) => {
+  return bindActionCreators({ updateEmail, updatePassword, login, getUser, facebookLogin }, dispatch)
+}
+
+const mapStateToProps = (state) => {
+  return {
+    user: state.user
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Filter)
+
+{/*
       <ImageBackground source={require('../temp/filterBG.png')} style={[styles.container, { alignItems: 'center' }]}>
         <Text style={[styles.textA, { marginTop: 55 }]}>Filter</Text>
         <TouchableOpacity style={{ marginTop: 70 }}>
@@ -94,19 +114,4 @@ class Filter extends React.Component {
         
         <TouchableOpacity style={[styles.buttonLogin2, { marginTop: 55 }]} onPress={() => this.props.navigation.goBack()}>
           <Text style={styles.textA}>search</Text></TouchableOpacity>
-      </ImageBackground>
-    );
-  }
-}
-
-const mapDispatchToProps = (dispatch) => {
-  return bindActionCreators({ updateEmail, updatePassword, login, getUser, facebookLogin }, dispatch)
-}
-
-const mapStateToProps = (state) => {
-  return {
-    user: state.user
-  }
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(Filter)
+        </ImageBackground>*/}
