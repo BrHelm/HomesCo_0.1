@@ -253,24 +253,24 @@ class Profile extends React.Component {
             </View>
         </ImageBackground>  
           <View style={[styles.row, styles.space, styles.followBar,{marginTop:0}]}>
-            <View style={styles.center}>
+            {/*<View style={styles.center}>
               <Text style={[styles.bold, styles.textF]}>{user.posts.length}</Text>
               <Text style={[styles.bold, styles.textF]}>posts</Text>
-            </View>
+            </View>*/}
             <View style={styles.center}>
               <Text style={[styles.bold, styles.textF]}>{user.followers.length}</Text>
               <Text style={[styles.bold, styles.textF]}>followers</Text>
             </View>
-            <View style={styles.center}>
+            {/*<View style={styles.center}>
               <Text style={[styles.bold, styles.textF]}>{user.following.length}</Text>
               <Text style={[styles.bold, styles.textF]}>following</Text>
-            </View>
+            </View> */}
             {/* <View style={styles.center}>
                 <Text style={[styles.bold, styles.textD, { color: 'red' }]}>hide</Text>
               </View> */}
           </View>
         
-        <FlatList
+        {/*<FlatList
           initialNumToRender='9'
           maxToRenderPerBatch='9'
           windowSize={12}
@@ -369,7 +369,22 @@ class Profile extends React.Component {
                 }
               </View>
             )}
-          }/>
+          }/> */}
+          <View style={styles.container}>
+        <FlatList
+          data={[
+            {key: 'https://firebasestorage.googleapis.com/v0/b/homesco-44fd3.appspot.com/o/aaron-huber-401151-unsplash.jpg?alt=media&token=c1e0df28-cb68-4848-801b-892f13356617'},
+            {key: 'https://firebasestorage.googleapis.com/v0/b/homesco-44fd3.appspot.com/o/joanes-andueza-1200298-unsplash.jpg?alt=media&token=11178968-13dc-4f96-88dd-16524a319e97'},
+            {key: 'https://firebasestorage.googleapis.com/v0/b/homesco-44fd3.appspot.com/o/Ocean-view-homes-for-sale.png?alt=media&token=62c59160-9549-47e0-a60b-b04d708ac368'},
+            {key: 'https://firebasestorage.googleapis.com/v0/b/homesco-44fd3.appspot.com/o/outsite-co-322866-unsplash.jpg?alt=media&token=4716a51f-a995-4199-a451-af314da5ab65'},
+            {key: 'https://firebasestorage.googleapis.com/v0/b/homesco-44fd3.appspot.com/o/rhema-kallianpur-560711-unsplash.jpg?alt=media&token=eed0e979-a2a5-45e3-bb37-72e4400be007'},
+          ]}
+          horizontal={true}
+          renderItem={({item}) => 
+            <ImageBackground style={styles.postPhoto} source={{ uri: item.key }} 
+            />}
+        />
+      </View>
       </ScrollView>
     );
   }

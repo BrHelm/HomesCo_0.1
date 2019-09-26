@@ -99,13 +99,13 @@ class Signup extends React.Component {
                 placeholder='username'
                 placeholderTextColor='rgb(75,75,75)'
               />
-              {/*<TextInput
+              <TextInput
                 style={[styles.border4, styles.textB, { marginTop: 30 }]}
                 value={this.props.user.bio}
                 onChangeText={input => this.props.updateBio(input)}
                 placeholder='bio'
                 placeholderTextColor='rgb(75,75,75)'
-              />*/}
+              />
               <TouchableOpacity style={[styles.buttonSignup, { marginTop: 60 }]} onPress={this.onPress}>
                 <Text style={styles.textA}>signup</Text>
               </TouchableOpacity>

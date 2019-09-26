@@ -35,7 +35,7 @@ class Home extends React.Component {
     }
   }
 
-  onDoubleTap = (post) => {
+  onDoubleTap2 = (post) => {
     const { uid } = this.props.user
     if (post.likes.includes(uid)) {
       this.props.unlikePost(post)
@@ -43,7 +43,10 @@ class Home extends React.Component {
       this.props.likePost(post)
     }
   }
-
+  onDoubleTap = (user) => {
+    this.props.getUser(user.uid)
+    this.props.navigation.navigate('Profile')
+  }
   navigateMap = (item) => {
     this.props.navigation.navigate('Map', {
       location: item.postLocation
@@ -72,7 +75,7 @@ class Home extends React.Component {
             return (
               <View id={item.id} style={{padding: 0, margin: 0}}>
                 <DoubleTap onDoubleTap={() => this.onDoubleTap(item)} >
-                  <ImageBackground style={styles.postPhoto} source={{ uri: item.postPhoto }} >
+                  <ImageBackground style={styles.postPhoto} source={{ uri: item.photo }} >
                     {/*
                     <View style={styles.bottom}>
 
@@ -119,6 +122,9 @@ class Home extends React.Component {
                       <Text style={styles.infoText}>21045 Willingham Ct.</Text>
                       <Text style={styles.infoText}>Boulder, Co 536727</Text>
                       <Text style={styles.infoText}>3 beds | 3 baths | 3,100 sq.ft</Text>
+                      <Text style={styles.infoText}>{item.postDescription}</Text>
+                      <TouchableOpacity style={styles.buttonBuy} onPress={() => this.goToUser(item)}
+                       ><Text style={styles.textA}>Buy</Text></TouchableOpacity>
                     </View>
                   </ImageBackground>
                 </DoubleTap>

@@ -206,7 +206,7 @@ class SearchFilter extends Component {
           <TouchableOpacity
             style={styles.SearchButtonStyle}
             activeOpacity={0.5}
-            onPress={() => this.props.navigation.navigate("main")}
+            onPress={() => this.props.navigation.navigate("Home")}
           >
             <Text style={styles.FilterText}> S E A R C H </Text>
           </TouchableOpacity>

@@ -27,13 +27,13 @@ export const HomeNavigator = createAppContainer(createStackNavigator(
         headerTransparent: true,
         headerTitle: <Image style={[styles.logoHeader,{ width: 150, height: 45 }]} source={require('../assets/logoW.png')} />,
         headerLeft: (
-          <TouchableOpacity onPress={() => navigation.navigate('Camera')} >
-            <Ionicons style={{ marginLeft: 10, color: 'rgb(255,255,255)' }} name={'ios-camera'} size={45} />
+          <TouchableOpacity onPress={() => navigation.navigate('Filter')} >
+            <Ionicons style={{ marginLeft: 10, color: 'rgb(255,255,255)' }} name={'ios-map'} size={45} />
           </TouchableOpacity>
         ),
         headerRight: (
           <TouchableOpacity onPress={() => navigation.navigate('Messages')} >
-            <Ionicons style={{ marginRight: 10, color: 'rgb(255,255,255)' }} name={'ios-send'} size={45} />
+            <Ionicons style={{ marginRight: 10, color: 'rgb(255,255,255)' }} name={'ios-chatboxes'} size={45} />
           </TouchableOpacity>
         ),
       })
